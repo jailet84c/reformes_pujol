@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemFP"
+    android:layout_width="match_parent"
+    android:layout_height="200sp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardvfp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/fotoportada"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="30sp"
+            app:srcCompat="@drawable/reformespujol" />
+
+        <TextView
+            android:id="@+id/tvcampinga"
+            android:layout_width="220sp"
+            android:layout_height="30sp"
+            android:layout_marginStart="150sp"
+            android:layout_marginTop="25sp"
+            android:shadowColor="#818181"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="3"
+            android:text="@string/camping"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvnoma"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150sp"
+            android:layout_marginTop="70sp"
+            android:shadowColor="#818181"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="3"
+            android:text="@string/nomPres" />
+
+        <TextView
+            android:id="@+id/tipofeina"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150sp"
+            android:layout_marginTop="130sp"
+            android:shadowColor="#818181"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="3"
+            android:text="Feina" />
+
+        <TextView
+            android:id="@+id/tvpreu"
+            android:layout_width="55sp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="270sp"
+            android:layout_marginTop="150sp"
+            android:gravity="end"
+            android:shadowColor="#818181"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="3"
+            android:text="@string/preu"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvtelefon"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150sp"
+            android:layout_marginTop="100sp"
+            android:shadowColor="#818181"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="3"
+            android:text="@string/Telefon" />
+
+        <TextView
+            android:id="@+id/tveurofp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="325sp"
+            android:layout_marginTop="150sp"
+            android:text="€"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvpis"
+            android:layout_width="55sp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="270sp"
+            android:layout_marginTop="130sp"
+            android:shadowColor="#818181"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="3"
+            android:text="@string/pis"
+            android:textAlignment="textEnd" />
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

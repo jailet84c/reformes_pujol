@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/rectconcepte3"
+        android:layout_width="0dp"
+        android:layout_height="30sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#DDFFFFFF"
+        android:contentDescription="@string/todo6"
+        android:src="@drawable/rectanglenegre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectconcepte2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/noutvEuros2"
+        android:layout_width="10sp"
+        android:layout_height="20sp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="€"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rectconcepte3"
+        app:layout_constraintStart_toEndOf="@+id/nouetTotalIva"
+        app:layout_constraintTop_toTopOf="@+id/rectconcepte3"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <ImageView
+        android:id="@+id/rectconcepte2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="100dp"
+        android:contentDescription="@string/todo1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectconcepte"
+        app:srcCompat="@drawable/rectanglenegre" />
+
+    <ImageView
+        android:id="@+id/rectTotal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="100dp"
+        android:contentDescription="@string/todo2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rectconcepte2"
+        app:layout_constraintTop_toTopOf="@+id/rectconcepte"
+        app:srcCompat="@drawable/rectanglenegre" />
+
+
+    <EditText
+        android:id="@+id/nouetnumero6"
+        android:layout_width="50sp"
+        android:layout_height="30sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="phone"
+        android:maxLength="6"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/rectTotal"
+        app:layout_constraintStart_toEndOf="@+id/rectconcepte2"
+        app:layout_constraintTop_toBottomOf="@+id/nouetnumero5" />
+
+    <EditText
+        android:id="@+id/nouetnumero7"
+        android:layout_width="50sp"
+        android:layout_height="30sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="phone"
+        android:maxLength="6"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/rectTotal"
+        app:layout_constraintStart_toEndOf="@+id/rectconcepte2"
+        app:layout_constraintTop_toBottomOf="@+id/nouetnumero6" />
+
+
+    <EditText
+        android:id="@+id/nouetnumero3"
+        android:layout_width="50sp"
+        android:layout_height="30sp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="phone"
+        android:maxLength="6"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/rectTotal"
+        app:layout_constraintStart_toEndOf="@+id/rectconcepte2"
+        app:layout_constraintTop_toBottomOf="@+id/nouetnumero2" />
+
+    <EditText
+        android:id="@+id/nouetnumero4"
+        android:layout_width="50sp"
+        android:layout_height="30sp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="phone"
+        android:maxLength="6"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/rectTotal"
+        app:layout_constraintStart_toStartOf="@+id/rectTotal"
+        app:layout_constraintTop_toBottomOf="@+id/nouetnumero3" />
+
+    <EditText
+        android:id="@+id/nouetnumero5"
+        android:layout_width="50sp"
+        android:layout_height="30sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="phone"
+        android:maxLength="6"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/rectTotal"
+        app:layout_constraintStart_toEndOf="@+id/rectconcepte2"
+        app:layout_constraintTop_toBottomOf="@+id/nouetnumero4" />
+
+    <ImageView
+        android:id="@+id/rectimage"
+        android:layout_width="300sp"
+        android:layout_height="110sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="#DDFFFFFF"
+        android:contentDescription="@string/todo4"
+        android:src="@drawable/rectangle"
+        app:layout_constraintBottom_toTopOf="@+id/rectdadesclient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/noutvRai"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/rai"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/rectimage"
+        app:layout_constraintTop_toBottomOf="@+id/nounomEmpresa" />
+
+    <TextView
+        android:id="@+id/noutvEdu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/edu"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rectimage"
+        app:layout_constraintStart_toStartOf="@+id/rectimage"
+        app:layout_constraintTop_toBottomOf="@+id/noutvRai"
+        app:layout_constraintVertical_bias="0.272" />
+
+    <TextView
+        android:id="@+id/noutvNRai"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/_695010028"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toEndOf="@+id/noutvRai"
+        app:layout_constraintTop_toBottomOf="@+id/nounomEmpresa" />
+
+    <TextView
+        android:id="@+id/noutvNEdu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/_605847675"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toEndOf="@+id/noutvEdu"
+        app:layout_constraintTop_toBottomOf="@+id/noutvNRai" />
+
+    <ImageView
+        android:id="@+id/rectdadesclient"
+        android:layout_width="0dp"
+        android:layout_height="100sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="@string/todo5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectimage"
+        app:srcCompat="@drawable/rectanglenegre" />
+
+    <TextView
+        android:id="@+id/noutvData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/dataPressupost"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/nouetCampingP"
+        app:layout_constraintStart_toStartOf="@+id/rectdadesclient"
+        app:layout_constraintTop_toTopOf="@+id/rectdadesclient" />
+
+    <EditText
+        android:id="@+id/nouetData"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/noutvData"
+        app:layout_constraintTop_toTopOf="@+id/rectdadesclient" />
+
+    <TextView
+        android:id="@+id/noutvNomC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/nomPressupost"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/nouetData"
+        app:layout_constraintTop_toTopOf="@+id/rectdadesclient" />
+
+    <EditText
+        android:id="@+id/nouetNomP"
+        android:layout_width="0dp"
+        android:layout_height="40sp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:autofillHints=""
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:inputType="textMultiLine|textPersonName"
+        android:maxLength="20"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectdadesclient"
+        app:layout_constraintStart_toEndOf="@+id/noutvNomC"
+        app:layout_constraintTop_toTopOf="@+id/rectdadesclient" />
+
+    <TextView
+        android:id="@+id/noutvCampingP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/campingPres"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rectdadesclient"
+        app:layout_constraintStart_toStartOf="@+id/rectdadesclient"
+        app:layout_constraintTop_toBottomOf="@+id/noutvData" />
+
+    <EditText
+        android:id="@+id/nouetCampingP"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints=""
+        android:background="@android:color/transparent"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz0123456789"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectdadesclient"
+        app:layout_constraintStart_toEndOf="@+id/noutvCampingP"
+        app:layout_constraintTop_toBottomOf="@+id/nouetData" />
+
+    <ImageView
+        android:id="@+id/rectconcepte"
+        android:layout_width="0dp"
+        android:layout_height="35sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#DDFFFFFF"
+        android:contentDescription="@string/todo6"
+        android:src="@drawable/rectanglenegre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectdadesclient"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/noutvconcepte"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/concepte"
+        android:textSize="12sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@+id/rectconcepte"
+        app:layout_constraintTop_toTopOf="@+id/rectconcepte" />
+
+    <TextView
+        android:id="@+id/noutvTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/total"
+        android:textSize="12sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="@+id/rectconcepte"
+        app:layout_constraintTop_toTopOf="@+id/rectTotal" />
+
+    <EditText
+        android:id="@+id/nouetConcepte1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:gravity="top"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectconcepte2"
+        app:layout_constraintEnd_toEndOf="@+id/rectconcepte2"
+        app:layout_constraintStart_toStartOf="@+id/rectconcepte2"
+        app:layout_constraintTop_toBottomOf="@+id/rectconcepte" />
+
+    <EditText
+        android:id="@+id/nouetnumero1"
+        android:layout_width="50sp"
+        android:layout_height="30sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="phone"
+        android:maxLength="6"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/rectTotal"
+        app:layout_constraintStart_toEndOf="@+id/rectconcepte2"
+        app:layout_constraintTop_toBottomOf="@+id/rectconcepte" />
+
+    <EditText
+        android:id="@+id/nouetnumero2"
+        android:layout_width="50sp"
+        android:layout_height="30sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="6"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/rectTotal"
+        app:layout_constraintStart_toEndOf="@+id/rectconcepte2"
+        app:layout_constraintTop_toBottomOf="@+id/nouetnumero1" />
+
+    <ImageView
+        android:id="@+id/noulogoempresa"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectimage"
+        app:layout_constraintEnd_toEndOf="@+id/rectimage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/noutvNRai"
+        app:layout_constraintTop_toTopOf="@+id/rectimage"
+        app:srcCompat="@drawable/reformespujol" />
+
+    <TextView
+        android:id="@+id/nounomEmpresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/reformes_pujol"
+        android:textColor="#040404"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@+id/rectimage"
+        app:layout_constraintTop_toTopOf="@+id/rectimage" />
+
+    <TextView
+        android:id="@+id/noutvIVA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/iva_21"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectconcepte3"
+        app:layout_constraintStart_toStartOf="@+id/rectconcepte3"
+        app:layout_constraintTop_toTopOf="@+id/rectconcepte3" />
+
+    <EditText
+        android:id="@+id/nouetTotal"
+        android:layout_width="60sp"
+        android:layout_height="20sp"
+        android:layout_marginEnd="20dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:gravity="end"
+        android:inputType="phone"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectconcepte3"
+        app:layout_constraintEnd_toEndOf="@+id/rectconcepte3"
+        app:layout_constraintTop_toTopOf="@+id/rectconcepte3" />
+
+    <TextView
+        android:id="@+id/noutvEuros"
+        android:layout_width="10sp"
+        android:layout_height="20sp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:text="€"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rectconcepte3"
+        app:layout_constraintEnd_toEndOf="@+id/rectconcepte3"
+        app:layout_constraintStart_toEndOf="@+id/nouetTotal"
+        app:layout_constraintTop_toTopOf="@+id/rectconcepte3" />
+
+    <EditText
+        android:id="@+id/nouetTotalIva"
+        android:layout_width="60sp"
+        android:layout_height="20sp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="2dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:gravity="end"
+        android:inputType="phone"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectconcepte3"
+        app:layout_constraintStart_toEndOf="@+id/noutvIVA"
+        app:layout_constraintTop_toTopOf="@+id/rectconcepte3" />
+
+    <TextView
+        android:id="@+id/tvtelefonprenou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:text="Tlf :"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/nouetCampingP"
+        app:layout_constraintTop_toBottomOf="@+id/noutvNomC" />
+
+    <EditText
+        android:id="@+id/ettlfpre"
+        android:layout_width="140sp"
+        android:layout_height="25sp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:inputType="phone"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/tvtelefonprenou"
+        app:layout_constraintTop_toBottomOf="@+id/nouetNomP" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/noubtGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="163dp"
+        android:background="@drawable/botorodo"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="3"
+        android:text="@string/guardar"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectconcepte3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

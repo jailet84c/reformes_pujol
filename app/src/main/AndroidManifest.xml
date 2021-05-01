@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.reformespujol">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/reformespujol"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/reformespujol"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.reformespujol.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".MaterialPendent" />
+        <activity android:name=".ActivityDetall" />
+        <activity android:name=".Feines" />
+        <activity android:name=".Gualba" />
+        <activity android:name=".Tossa" />
+        <activity android:name=".Roca" />
+        <activity android:name=".Kanguro" />
+        <activity android:name=".Berga" />
+        <activity android:name=".Josep" />
+        <activity android:name=".Campings" />
+        <activity android:name=".agregarNouClient" />
+        <activity android:name=".ClientDetall" />
+        <activity android:name=".EscollirFotoGaleria" />
+        <activity android:name=".LListaPressupostos" />
+        <activity
+            android:name=".Pressupostos"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PressupostNou"
+            android:screenOrientation="portrait" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
