@@ -17,166 +17,16 @@
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         tools:ignore="MissingConstraints" />
 
-
     <ImageView
-        android:id="@+id/rectconcepte3"
-        android:layout_width="0dp"
-        android:layout_height="30sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="#DDFFFFFF"
-        android:contentDescription="@string/todo6"
-        android:src="@drawable/rectanglenegre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectconcepte2"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/tvEuros2"
-        android:layout_width="20sp"
-        android:layout_height="20sp"
-        android:layout_marginBottom="5dp"
-        android:gravity="center"
-        android:text="€"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/rectconcepte3"
-        app:layout_constraintStart_toEndOf="@+id/etTotalIva"
-        app:layout_constraintTop_toTopOf="@+id/rectconcepte3"
-        app:layout_constraintVertical_bias="0.7" />
-
-    <ImageView
-        android:id="@+id/rectconcepte2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="90dp"
-        android:layout_marginBottom="80dp"
-        android:contentDescription="@string/todo1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectconcepte"
-        app:srcCompat="@drawable/rectanglenegre" />
-
-    <ImageView
-        android:id="@+id/rectTotal"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="80dp"
-        android:contentDescription="@string/todo2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rectconcepte2"
-        app:layout_constraintTop_toTopOf="@+id/rectconcepte"
-        app:srcCompat="@drawable/rectanglenegre" />
-
-
-    <EditText
-        android:id="@+id/etnumero6"
-        android:layout_width="50sp"
-        android:layout_height="30sp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="number|phone"
-        android:maxLength="6"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/rectTotal"
-        app:layout_constraintStart_toEndOf="@+id/rectconcepte2"
-        app:layout_constraintTop_toBottomOf="@+id/etnumero5" />
-
-    <EditText
-        android:id="@+id/etnumero7"
-        android:layout_width="50sp"
-        android:layout_height="30sp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="1dp"
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="phone"
-        android:maxLength="6"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/etConcepte1"
-        app:layout_constraintEnd_toEndOf="@+id/rectTotal"
-        app:layout_constraintStart_toEndOf="@+id/rectconcepte2"
-        app:layout_constraintTop_toBottomOf="@+id/etnumero6" />
-
-
-    <EditText
-        android:id="@+id/etnumero3"
-        android:layout_width="50sp"
-        android:layout_height="30sp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="5dp"
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="phone"
-        android:maxLength="6"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/rectTotal"
-        app:layout_constraintStart_toEndOf="@+id/rectconcepte2"
-        app:layout_constraintTop_toBottomOf="@+id/etnumero2" />
-
-    <EditText
-        android:id="@+id/etnumero4"
-        android:layout_width="50sp"
-        android:layout_height="30sp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="5dp"
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="phone"
-        android:maxLength="6"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/rectTotal"
-        app:layout_constraintStart_toStartOf="@+id/rectTotal"
-        app:layout_constraintTop_toBottomOf="@+id/etnumero3" />
-
-    <EditText
-        android:id="@+id/etnumero5"
-        android:layout_width="50sp"
-        android:layout_height="30sp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="phone"
-        android:maxLength="6"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/rectTotal"
-        app:layout_constraintStart_toEndOf="@+id/rectconcepte2"
-        app:layout_constraintTop_toBottomOf="@+id/etnumero4" />
-
-    <ImageView
-        android:id="@+id/rectimage"
+        android:id="@+id/rectimagepre"
         android:layout_width="300sp"
         android:layout_height="110sp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="5dp"
         android:background="#DDFFFFFF"
         android:contentDescription="@string/todo4"
         android:src="@drawable/rectangle"
-        app:layout_constraintBottom_toTopOf="@+id/rectdadesclient"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
@@ -184,18 +34,18 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/tvRai"
+        android:id="@+id/tvRaipre"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:text="@string/rai"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/rectimage"
-        app:layout_constraintTop_toBottomOf="@+id/nomEmpresa" />
+        app:layout_constraintStart_toStartOf="@+id/rectimagepre"
+        app:layout_constraintTop_toBottomOf="@+id/nomEmpresapre" />
 
     <TextView
-        android:id="@+id/tvEdu"
+        android:id="@+id/tvEdupre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -203,330 +53,321 @@
         android:layout_marginBottom="20dp"
         android:text="@string/edu"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/rectimage"
-        app:layout_constraintStart_toStartOf="@+id/rectimage"
-        app:layout_constraintTop_toBottomOf="@+id/tvRai"
+        app:layout_constraintBottom_toBottomOf="@+id/rectimagepre"
+        app:layout_constraintStart_toStartOf="@+id/rectimagepre"
+        app:layout_constraintTop_toBottomOf="@+id/tvRaipre"
         app:layout_constraintVertical_bias="0.272" />
 
     <TextView
-        android:id="@+id/tvNRai"
+        android:id="@+id/tvNRaipre"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:text="@string/_695010028"
         android:textStyle="bold|italic"
-        app:layout_constraintStart_toEndOf="@+id/tvRai"
-        app:layout_constraintTop_toBottomOf="@+id/nomEmpresa" />
+        app:layout_constraintStart_toEndOf="@+id/tvRaipre"
+        app:layout_constraintTop_toBottomOf="@+id/nomEmpresapre" />
 
     <TextView
-        android:id="@+id/tvNEdu"
+        android:id="@+id/tvNEdupre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/_605847675"
         android:textStyle="bold|italic"
-        app:layout_constraintStart_toEndOf="@+id/tvEdu"
-        app:layout_constraintTop_toBottomOf="@+id/tvNRai" />
+        app:layout_constraintStart_toEndOf="@+id/tvEdupre"
+        app:layout_constraintTop_toBottomOf="@+id/tvNRaipre" />
 
     <ImageView
-        android:id="@+id/rectdadesclient"
-        android:layout_width="0dp"
-        android:layout_height="100sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:contentDescription="@string/todo5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectimage"
-        app:srcCompat="@drawable/rectanglenegre" />
-
-    <TextView
-        android:id="@+id/tvData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/dataPressupost"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/rectdadesclient"
-        app:layout_constraintTop_toTopOf="@+id/rectdadesclient" />
-
-    <EditText
-        android:id="@+id/etData"
-        android:layout_width="102dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:autofillHints=""
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:inputType="date"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvCampingP"
-        app:layout_constraintStart_toEndOf="@+id/tvData"
-        app:layout_constraintTop_toTopOf="@+id/rectdadesclient" />
-
-    <TextView
-        android:id="@+id/tvNomC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/nomPressupost"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/etData"
-        app:layout_constraintTop_toTopOf="@+id/rectdadesclient" />
-
-    <EditText
-        android:id="@+id/etNomP"
-        android:layout_width="0dp"
-        android:layout_height="40sp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        android:autofillHints=""
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:hint="Antonio Carmona"
-        android:inputType="textMultiLine|textPersonName"
-        android:maxLength="20"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/rectdadesclient"
-        app:layout_constraintStart_toEndOf="@+id/tvNomC"
-        app:layout_constraintTop_toTopOf="@+id/rectdadesclient" />
-
-    <TextView
-        android:id="@+id/tvCampingP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="@string/campingPres"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/rectdadesclient"
-        app:layout_constraintStart_toStartOf="@+id/rectdadesclient"
-        app:layout_constraintTop_toBottomOf="@+id/tvData" />
-
-    <EditText
-        android:id="@+id/etCampingP"
-        android:layout_width="100sp"
-        android:layout_height="25sp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:autofillHints=""
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/rectdadesclient"
-        app:layout_constraintStart_toEndOf="@+id/tvCampingP"
-        app:layout_constraintTop_toBottomOf="@+id/etData" />
-
-    <ImageView
-        android:id="@+id/rectconcepte"
-        android:layout_width="0dp"
-        android:layout_height="35sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="#DDFFFFFF"
-        android:contentDescription="@string/todo6"
-        android:src="@drawable/rectanglenegre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectdadesclient"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/tvconcepte"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/concepte"
-        android:textSize="12sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintStart_toStartOf="@+id/rectconcepte"
-        app:layout_constraintTop_toTopOf="@+id/rectconcepte" />
-
-    <TextView
-        android:id="@+id/tvTotal"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="30dp"
-        android:text="@string/total"
-        android:textSize="12sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="@+id/rectconcepte"
-        app:layout_constraintTop_toTopOf="@+id/rectTotal" />
-
-    <EditText
-        android:id="@+id/etConcepte1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:gravity="top"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/rectconcepte2"
-        app:layout_constraintEnd_toEndOf="@+id/rectconcepte2"
-        app:layout_constraintStart_toStartOf="@+id/rectconcepte2"
-        app:layout_constraintTop_toBottomOf="@+id/rectconcepte" />
-
-    <EditText
-        android:id="@+id/etnumero1"
-        android:layout_width="50sp"
-        android:layout_height="30sp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="phone"
-        android:maxLength="6"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/rectTotal"
-        app:layout_constraintStart_toEndOf="@+id/rectconcepte2"
-        app:layout_constraintTop_toBottomOf="@+id/rectconcepte" />
-
-    <EditText
-        android:id="@+id/etnumero2"
-        android:layout_width="50sp"
-        android:layout_height="30sp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="phone"
-        android:maxLength="6"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/rectTotal"
-        app:layout_constraintStart_toEndOf="@+id/rectconcepte2"
-        app:layout_constraintTop_toBottomOf="@+id/etnumero1" />
-
-    <ImageView
-        android:id="@+id/logoempresa"
+        android:id="@+id/logoempresapre"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/rectimage"
-        app:layout_constraintEnd_toEndOf="@+id/rectimage"
+        app:layout_constraintBottom_toBottomOf="@+id/rectimagepre"
+        app:layout_constraintEnd_toEndOf="@+id/rectimagepre"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tvNRai"
-        app:layout_constraintTop_toTopOf="@+id/rectimage"
+        app:layout_constraintStart_toEndOf="@+id/tvNRaipre"
+        app:layout_constraintTop_toTopOf="@+id/rectimagepre"
         app:srcCompat="@drawable/reformespujol" />
 
     <TextView
-        android:id="@+id/nomEmpresa"
+        android:id="@+id/nomEmpresapre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:text="Reformes Pujol"
+        android:text="@string/reformes_pujol"
         android:textColor="#040404"
         android:textSize="16sp"
         android:textStyle="bold|italic"
-        app:layout_constraintStart_toStartOf="@+id/rectimage"
-        app:layout_constraintTop_toTopOf="@+id/rectimage" />
+        app:layout_constraintStart_toStartOf="@+id/rectimagepre"
+        app:layout_constraintTop_toTopOf="@+id/rectimagepre" />
 
-    <TextView
-        android:id="@+id/tvIVA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="@string/iva_21"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/rectconcepte3"
-        app:layout_constraintStart_toStartOf="@+id/rectconcepte3"
-        app:layout_constraintTop_toTopOf="@+id/rectconcepte3" />
+    <androidx.cardview.widget.CardView
 
-    <EditText
-        android:id="@+id/etTotal"
-        android:layout_width="60sp"
-        android:layout_height="20sp"
-        android:layout_marginEnd="30dp"
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:gravity="end"
-        android:inputType="phone"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/rectconcepte3"
-        app:layout_constraintEnd_toEndOf="@+id/rectconcepte3"
-        app:layout_constraintTop_toTopOf="@+id/rectconcepte3" />
+        android:id="@+id/cardpressupost"
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10sp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectimagepre">
 
-    <TextView
-        android:id="@+id/tvEuros"
-        android:layout_width="20sp"
-        android:layout_height="20sp"
-        android:layout_marginEnd="10dp"
-        android:gravity="center"
-        android:text="€"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/rectconcepte3"
-        app:layout_constraintEnd_toEndOf="@+id/rectconcepte3"
-        app:layout_constraintStart_toEndOf="@+id/etTotal"
-        app:layout_constraintTop_toTopOf="@+id/rectconcepte3" />
+        <TextView
+            android:id="@+id/tvData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|top"
+            android:layout_marginStart="15sp"
+            android:layout_marginTop="15sp"
+            android:text="@string/dataPressupost"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/etTotalIva"
-        android:layout_width="60sp"
-        android:layout_height="20sp"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="2dp"
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:gravity="end"
-        android:inputType="phone"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/rectconcepte3"
-        app:layout_constraintStart_toEndOf="@+id/tvIVA"
-        app:layout_constraintTop_toTopOf="@+id/rectconcepte3" />
+        <EditText
+            android:id="@+id/etData"
+            android:layout_width="80sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|top"
+            android:layout_marginStart="57sp"
+            android:layout_marginTop="15sp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:inputType="phone"
+            android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/tvtelefonprenou"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tvNomC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|top"
+            android:layout_marginTop="15sp"
+            android:layout_marginEnd="100sp"
+            android:text="@string/nomPressupost"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etNomP"
+            android:layout_width="80sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|top"
+            android:layout_marginTop="15sp"
+            android:layout_marginEnd="10sp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:inputType="textMultiLine|textPersonName"
+            android:maxLength="20"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvCampingP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom"
+            android:layout_marginStart="15sp"
+            android:layout_marginBottom="15sp"
+            android:text="@string/campingPres"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etCampingP"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom"
+            android:layout_marginStart="85sp"
+            android:layout_marginBottom="15sp"
+            android:background="@android:color/transparent"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz0123456789"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvtelefonprenou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="100sp"
+            android:layout_marginBottom="15sp"
+            android:text="@string/tlf"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/ettlfpre"
+            android:layout_width="80sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="15sp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:inputType="phone"
+            android:textSize="14sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/barraconceptepre"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:text="Tlf :"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/etCampingP"
-        app:layout_constraintTop_toBottomOf="@+id/tvNomC" />
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="1dp"
+        app:cardBackgroundColor="#7CBAB9B9"
+        app:cardCornerRadius="20sp"
+        app:cardElevation="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/conceptetextpre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardpressupost">
 
-    <EditText
-        android:id="@+id/ettlfpre"
-        android:layout_width="140sp"
-        android:layout_height="25sp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:inputType="phone"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/tvtelefonprenou"
-        app:layout_constraintTop_toBottomOf="@+id/etNomP" />
+        <TextView
+            android:id="@+id/Conceptepre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10sp"
+            android:text="@string/concepte"
+            android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/totaltextpre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginEnd="40sp"
+            android:text="@string/total"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/conceptetextpre"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="1dp"
+        app:cardCornerRadius="20sp"
+        app:cardElevation="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/conceptepreupre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/barraconceptepre">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/conceptepreus"
+            android:layout_width="90sp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <EditText
+                android:id="@+id/etnumerospre"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10sp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:gravity="center_horizontal|top"
+                android:inputType="textMultiLine"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <EditText
+            android:id="@+id/etConceptepre"
+            android:layout_width="260sp"
+            android:layout_height="match_parent"
+            android:layout_margin="10sp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:singleLine="false"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/conceptepreupre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        app:cardBackgroundColor="#7CBAB9B9"
+        app:cardCornerRadius="20sp"
+        app:cardElevation="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/conceptetextpre">
+
+        <TextView
+            android:id="@+id/iva21pre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10sp"
+            android:text="@string/iva_21" />
+
+        <EditText
+            android:id="@+id/etTotalIvapreFet"
+            android:layout_width="60sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="65sp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:gravity="end"
+            android:inputType="phone"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tveuropre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="125sp"
+            android:text="@string/euros" />
+
+        <TextView
+            android:id="@+id/tveuroupre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="10sp"
+            android:text="@string/euros" />
+
+        <EditText
+            android:id="@+id/etTotalpreFet"
+            android:layout_width="60sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="20sp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:gravity="center_vertical|end"
+            android:inputType="phone"
+            android:textAlignment="textEnd"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

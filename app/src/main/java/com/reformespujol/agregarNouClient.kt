@@ -7,7 +7,6 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import java.lang.NumberFormatException
 
 class agregarNouClient : AppCompatActivity() {
 
@@ -17,6 +16,7 @@ class agregarNouClient : AppCompatActivity() {
     private lateinit var etpreu : EditText
     private lateinit var etparcial : EditText
     private lateinit var etfeina : EditText
+
     private lateinit var btAcceptar : Button
 
     lateinit var clientsRef: DatabaseReference
@@ -34,6 +34,7 @@ class agregarNouClient : AppCompatActivity() {
         etparcial = findViewById(R.id.etparciala)
         etfeina = findViewById(R.id.etfeina)
         btAcceptar = findViewById(R.id.btacceptar)
+
         clientsRef = FirebaseDatabase.getInstance().getReference("clients")
         btAcceptar.setOnClickListener { agregarNCFirebase() }
     }
@@ -47,8 +48,9 @@ class agregarNouClient : AppCompatActivity() {
         val parcial : String = etparcial.text.toString().trim()
         val feina : String = etfeina.text.toString().trim()
 
-        val STD = Client(camping, camping, nom, telefon, preu,parcial, feina)
-        clientsRef.child(camping).setValue(STD)
+        val sTD = Client(camping, camping,"", nom, telefon,"","","", preu,parcial, feina)
+
+        clientsRef.child(camping).setValue(sTD)
         mAdapter.notifyDataSetChanged()
         finish()
     }

@@ -5,14 +5,13 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.google.firebase.database.*
@@ -34,22 +33,13 @@ class MaterialPendent : AppCompatActivity() {
         val etmaterial = findViewById<EditText>(R.id.etMaterials)
         val btGuardar = findViewById<Button>(R.id.btGMaterials)
 
-       //val sharedPreferences : SharedPreferences = this.getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
-        //val recuperarMaterial = sharedPreferences.getString("material", "") // recuperar dades guardades
-
-        //etmaterial.setText(recuperarMaterial)
-
         materialRef = FirebaseDatabase.getInstance().getReference("Material")
 
         createNotificationChannel()
 
         btGuardar.setOnClickListener {
 
-            var textMaterial: String = etmaterial.text.toString().trim()
-          /*  val editor: SharedPreferences.Editor = sharedPreferences.edit()
-            editor.putString("material", textMaterial)
-            editor.apply()
-            editor.commit() */
+            val textMaterial: String = etmaterial.text.toString().trim()
 
             materialRef!!.setValue(textMaterial)
 

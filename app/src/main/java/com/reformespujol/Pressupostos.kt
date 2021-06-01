@@ -1,7 +1,6 @@
 package com.reformespujol
 
 import Client
-import Pressupost
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
@@ -26,21 +25,14 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
 
-
 class Pressupostos : AppCompatActivity() {
 
-    var etdatapre: TextView? = null
     var etcampingpre: TextView? = null
+    var etdatapre: TextView? = null
     var etnompre: TextView? = null
     var ettlfpre: TextView? = null
     var etconcepte: TextView? = null
-    var etnumero1: TextView? = null
-    var etnumero2: TextView? = null
-    var etnumero3: TextView? = null
-    var etnumero4: TextView? = null
-    var etnumero5: TextView? = null
-    var etnumero6: TextView? = null
-    var etnumero7: TextView? = null
+    var etnumerospre: TextView? = null
     var ettotaliva: TextView? = null
     var etpreutotal: TextView? = null
 
@@ -52,24 +44,51 @@ class Pressupostos : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-        etdatapre = findViewById(R.id.etData)
         etcampingpre = findViewById(R.id.etCampingP)
+        etdatapre = findViewById(R.id.etData)
         etnompre = findViewById(R.id.etNomP)
         ettlfpre = findViewById(R.id.ettlfpre)
-        etconcepte = findViewById(R.id.etConcepte1)
-        etnumero1 = findViewById(R.id.etnumero1)
-        etnumero2 = findViewById(R.id.etnumero2)
-        etnumero3 = findViewById(R.id.etnumero3)
-        etnumero4 = findViewById(R.id.etnumero4)
-        etnumero5 = findViewById(R.id.etnumero5)
-        etnumero6 = findViewById(R.id.etnumero6)
-        etnumero7 = findViewById(R.id.etnumero7)
-        ettotaliva = findViewById(R.id.etTotalIva)
-        etpreutotal = findViewById(R.id.etTotal)
+        etconcepte = findViewById(R.id.etConceptepre)
+        etnumerospre = findViewById(R.id.etnumerospre)
+        ettotaliva = findViewById(R.id.etTotalIvapreFet)
+        etpreutotal = findViewById(R.id.etTotalpreFet)
 
-        rebrePressupost()
+        //Resultat Pressupost desde Activity ClientDetall
+        val recibirclient = intent
+        var datosClient = recibirclient.getStringExtra("PressupostDades")
+        if (datosClient == null) {
+            rebrePressupost() // Clicat desde RecyclerViewFP
+        } else {
+            rebrePressupostClient(datosClient) //Rebut desde l Activity ClientDetall
+        }
+
+        //rebrePressupost()
 
         pressRef = FirebaseDatabase.getInstance().getReference("pressupostos")
+
+    }
+
+    private fun rebrePressupostClient(infoClient: String?) {
+        pressRef = FirebaseDatabase.getInstance().getReference("pressupostos").child(infoClient!!)
+        val rebreClient = object : ValueEventListener {       // Rebre info client
+            override fun onDataChange(snapshot: DataSnapshot) {
+
+                val clientPressupost = snapshot.getValue(Client::class.java)
+
+                etcampingpre!!.text = clientPressupost?.camping
+                etdatapre!!.text = clientPressupost?.data
+                etnompre!!.text = clientPressupost?.nom
+                ettlfpre!!.text = clientPressupost?.telefon
+                etconcepte?.text = clientPressupost?.concepte
+                etnumerospre?.text = clientPressupost?.n1
+                ettotaliva?.text = clientPressupost?.preutiva
+                etpreutotal!!.text = clientPressupost?.preutotal
+
+            }
+            override fun onCancelled(error: DatabaseError) {
+            }
+        }
+        pressRef?.addValueEventListener(rebreClient)        // Rebre info pressupost
 
     }
 
@@ -89,6 +108,7 @@ class Pressupostos : AppCompatActivity() {
                 return true
             }
             R.id.veureFeina -> {
+
                 veureFeina()
                 return true
             }
@@ -98,28 +118,26 @@ class Pressupostos : AppCompatActivity() {
 
     private fun veureFeina() {
 
-
+        val idClient = etcampingpre!!.text.toString()
+        val intentVeureFeina = Intent(this, ClientDetall::class.java).apply {
+            putExtra("clientDades", idClient)
+        }
+        startActivity(intentVeureFeina)
     }
 
     private fun actualitzarPressupost() {
         val pressupostId = etcampingpre!!.text.toString()
-        val pressupostrenovat = Pressupost(
+        val pressupostrenovat = Client(
                 pressupostId,
-                etdatapre?.text.toString(),
                 etcampingpre?.text.toString(),
+                etdatapre?.text.toString(),
                 etnompre?.text.toString(),
                 ettlfpre?.text.toString(),
                 etconcepte?.text.toString(),
-                etnumero1?.text.toString(),
-                etnumero2?.text.toString(),
-                etnumero3?.text.toString(),
-                etnumero4?.text.toString(),
-                etnumero5?.text.toString(),
-                etnumero6?.text.toString(),
-                etnumero7?.text.toString(),
+                etnumerospre?.text.toString(),
                 ettotaliva?.text.toString(),
-                etpreutotal?.text.toString()
-        )
+                etpreutotal?.text.toString())
+
         pressRef!!.child(pressupostId).setValue(pressupostrenovat)
         adapterPressupost.notifyDataSetChanged()
         finish()
@@ -131,22 +149,17 @@ class Pressupostos : AppCompatActivity() {
         pressRef = FirebaseDatabase.getInstance().getReference("pressupostos").child(idPressupost!!)
         val rebrePress = object : ValueEventListener {       // Rebre info pressupost
             override fun onDataChange(snapshot: DataSnapshot) {
-                val pressu = snapshot.getValue(Pressupost::class.java)
 
-                etdatapre!!.text = pressu?.datapre
-                etcampingpre!!.text = pressu?.campingpre
-                etnompre!!.text = pressu?.nompre
+                val pressu = snapshot.getValue(Client::class.java)
+
+                etcampingpre!!.text = pressu?.camping
+                etdatapre!!.text = pressu?.data
+                etnompre!!.text = pressu?.nom
                 ettlfpre!!.text = pressu?.telefon
-                etpreutotal!!.text = pressu?.preutotal.toString()
-                etconcepte?.text = pressu?.conceptepre
-                etnumero1?.text = pressu?.n1.toString()
-                etnumero2?.text = pressu?.n2.toString()
-                etnumero3?.text = pressu?.n3.toString()
-                etnumero4?.text = pressu?.n4.toString()
-                etnumero5?.text = pressu?.n5.toString()
-                etnumero6?.text = pressu?.n6.toString()
-                etnumero7?.text = pressu?.n7.toString()
-                ettotaliva?.text = pressu?.preutiva.toString()
+                etconcepte?.text = pressu?.concepte
+                etnumerospre?.text = pressu?.n1
+                ettotaliva?.text = pressu?.preutiva
+                etpreutotal!!.text = pressu?.preutotal
 
             }
             override fun onCancelled(error: DatabaseError) {

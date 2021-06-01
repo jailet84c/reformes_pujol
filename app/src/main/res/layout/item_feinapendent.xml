@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/itemFP"
     android:layout_width="match_parent"
-    android:layout_height="200sp">
+    android:layout_height="200sp"
+    android:padding="1dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardvfp"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
@@ -19,58 +20,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/fotoportada"
-            android:layout_width="100sp"
-            android:layout_height="100sp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="30sp"
-            app:srcCompat="@drawable/reformespujol" />
-
         <TextView
             android:id="@+id/tvcampinga"
             android:layout_width="220sp"
             android:layout_height="30sp"
-            android:layout_marginStart="150sp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="25sp"
             android:shadowColor="#818181"
             android:shadowDx="3"
             android:shadowDy="3"
             android:shadowRadius="3"
             android:text="@string/camping"
+            android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvnoma"
-            android:layout_width="100sp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="150sp"
+            android:layout_marginStart="10sp"
             android:layout_marginTop="70sp"
             android:shadowColor="#818181"
             android:shadowDx="3"
             android:shadowDy="3"
             android:shadowRadius="3"
-            android:text="@string/nomPres" />
+            android:text="@string/nomPres"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tipofeina"
-            android:layout_width="100sp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="150sp"
-            android:layout_marginTop="130sp"
+            android:layout_gravity="end"
+            android:layout_marginTop="70sp"
+            android:layout_marginEnd="20sp"
             android:shadowColor="#818181"
             android:shadowDx="3"
             android:shadowDy="3"
             android:shadowRadius="3"
-            android:text="Feina" />
+            android:text="Feina"
+            android:textAlignment="textEnd"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tvpreu"
-            android:layout_width="55sp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="270sp"
-            android:layout_marginTop="150sp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="40sp"
+            android:layout_marginBottom="20sp"
             android:gravity="end"
             android:shadowColor="#818181"
             android:shadowDx="3"
@@ -82,37 +81,53 @@
 
         <TextView
             android:id="@+id/tvtelefon"
-            android:layout_width="100sp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="150sp"
-            android:layout_marginTop="100sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="150dp"
             android:shadowColor="#818181"
             android:shadowDx="3"
             android:shadowDy="3"
             android:shadowRadius="3"
-            android:text="@string/Telefon" />
+            android:text="@string/Telefon"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tveurofp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="325sp"
-            android:layout_marginTop="150sp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="20sp"
+            android:layout_marginBottom="20sp"
+            android:text="€"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tveuropisfp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="20sp"
+            android:layout_marginBottom="45sp"
             android:text="€"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvpis"
-            android:layout_width="55sp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="270sp"
-            android:layout_marginTop="130sp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="40sp"
+            android:layout_marginBottom="45sp"
             android:shadowColor="#818181"
             android:shadowDx="3"
             android:shadowDy="3"
             android:shadowRadius="3"
             android:text="@string/pis"
-            android:textAlignment="textEnd" />
+            android:textAlignment="textEnd"
+            android:textSize="14sp" />
+
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

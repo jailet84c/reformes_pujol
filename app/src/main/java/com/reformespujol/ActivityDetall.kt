@@ -47,12 +47,13 @@ class ActivityDetall : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        viewPager = findViewById(R.id.view_pager)
+        val resultpos: Bundle? = this.intent.extras
+        val posiciovista: Int? = resultpos?.getInt("posicion") // posicio click
 
+        viewPager = findViewById(R.id.view_pager)
         val viewPagerAdapter = DetallAdapter()
-       
         viewPager.adapter = viewPagerAdapter
-        viewPager.currentItem
+        viewPager.currentItem = posiciovista!!
 
     }
 
@@ -141,7 +142,7 @@ class ActivityDetall : AppCompatActivity() {
     }
 }
 
-class DetallAdapter : RecyclerView.Adapter<DetallViewHolder>() {
+class DetallAdapter: RecyclerView.Adapter<DetallViewHolder>() {
 
     lateinit var context : Context
 

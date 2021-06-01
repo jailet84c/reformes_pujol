@@ -28,7 +28,7 @@
         android:shadowDy="3"
         android:shadowRadius="3"
         android:text="@string/camping"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,7 +44,7 @@
         android:shadowDy="3"
         android:shadowRadius="3"
         android:text="@string/nom"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvcampinga" />
@@ -60,7 +60,7 @@
         android:shadowDy="3"
         android:shadowRadius="3"
         android:text="@string/Telefon"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvnoma" />
@@ -76,14 +76,14 @@
         android:shadowDy="3"
         android:shadowRadius="3"
         android:text="@string/preu"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvtelefon" />
 
     <EditText
         android:id="@+id/etcamping"
-        android:layout_width="200sp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:layout_marginTop="90dp"
@@ -96,7 +96,7 @@
 
     <EditText
         android:id="@+id/etnom"
-        android:layout_width="200sp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
         android:layout_marginTop="30dp"
@@ -109,7 +109,7 @@
 
     <EditText
         android:id="@+id/etpreu"
-        android:layout_width="200sp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="90dp"
         android:layout_marginTop="40dp"
@@ -117,7 +117,7 @@
         android:ems="10"
         android:hint="@string/preu"
         android:inputType="number"
-        android:textSize="16sp"
+        android:textSize="16dp"
         app:layout_constraintStart_toEndOf="@+id/tvpreua"
         app:layout_constraintTop_toBottomOf="@+id/ettelefon" />
 
@@ -142,14 +142,14 @@
         android:shadowDy="3"
         android:shadowRadius="3"
         android:text="@string/feina"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvparciala" />
 
     <EditText
         android:id="@+id/etfeina"
-        android:layout_width="200sp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="30dp"
@@ -162,7 +162,7 @@
 
     <EditText
         android:id="@+id/ettelefon"
-        android:layout_width="200sp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="30dp"
@@ -184,14 +184,14 @@
         android:shadowDx="3"
         android:shadowDy="3"
         android:shadowRadius="3"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvpreua" />
 
     <EditText
         android:id="@+id/etparciala"
-        android:layout_width="200sp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="30dp"

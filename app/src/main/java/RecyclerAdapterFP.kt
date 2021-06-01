@@ -30,6 +30,7 @@ class RecyclerAdapterFP(private var feinespendents: ArrayList<Client>) : Recycle
         return fpFilterList.size
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
         val item = fpFilterList[position]
         holder.bind(item, context)
     }
@@ -42,9 +43,9 @@ class RecyclerAdapterFP(private var feinespendents: ArrayList<Client>) : Recycle
                      else -> {
                          val internalFilteredList: ArrayList<Client> = ArrayList()
                          for (data in feinespendents) {
-                             if (data.camping.contains(charSearch, ignoreCase = true)
-                                     || data.nom.contains(charSearch, ignoreCase = true)
-                                     || data.tipofeina.contains(charSearch, ignoreCase = true)) {
+                             if (data.camping!!.contains(charSearch, ignoreCase = true)
+                                     || data.nom!!.contains(charSearch, ignoreCase = true)
+                                     || data.tipofeina!!.contains(charSearch, ignoreCase = true)) {
                                  internalFilteredList.add(data)
                              }
                          }
@@ -64,8 +65,6 @@ class RecyclerAdapterFP(private var feinespendents: ArrayList<Client>) : Recycle
     }
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        private val REQUEST_CODE = 0
-
         val camping = view.findViewById(R.id.tvcampinga) as TextView
         val nom = view.findViewById(R.id.tvnoma) as TextView
         val telefon = view.findViewById(R.id.tvtelefon) as TextView
@@ -73,25 +72,18 @@ class RecyclerAdapterFP(private var feinespendents: ArrayList<Client>) : Recycle
         val parcial = view.findViewById(R.id.tvpis)  as TextView
         val feina = view.findViewById(R.id.tipofeina) as TextView
 
-        var fotoportada = view.findViewById(R.id.fotoportada) as ImageView
+        fun bind(clientFP: Client, context: Context) {
 
-        fun bind(feinespendents: Client, context: Context) {
-
-            camping.text = feinespendents.camping
-            nom.text = feinespendents.nom
-            telefon.text = feinespendents.telefon
-            preu.text = feinespendents.preu
-            parcial.text = feinespendents.parcial
-            feina.text = feinespendents.tipofeina
+            camping.text = clientFP.camping
+            nom.text = clientFP.nom
+            telefon.text = clientFP.telefon
+            preu.text = clientFP.preutotal
+            parcial.text = clientFP.parcial
+            feina.text = clientFP.tipofeina
 
             itemView.setOnClickListener {
                 val i = Intent(itemView.context, ClientDetall::class.java).apply {
-                    putExtra("CAMPING", camping.text.toString())
-                    putExtra("NOM", nom.text.toString())
-                    putExtra("TELEFON", telefon.text.toString())
-                    putExtra("PREU", preu.text.toString())
-                    putExtra("PARCIAL", parcial.text.toString())
-                    putExtra("FEINA", feina.text.toString())
+                    putExtra("DADESCLIENT", clientFP.camping)
                 }
                 itemView.context.startActivity(i)
             }
@@ -103,8 +95,8 @@ class RecyclerAdapterFP(private var feinespendents: ArrayList<Client>) : Recycle
                 builder.setIcon(android.R.drawable.ic_dialog_alert)
                 builder.setPositiveButton("Eliminar client") { _, _ ->
 
-                    val perItemPosition = feinespendents
-                    borrarClient(perItemPosition.clientid)
+                    val perItemPosition = clientFP
+                    borrarClient(perItemPosition.clientid!!)
                 }
                 builder.setNegativeButton("Anular") { _, _ ->
                     return@setNegativeButton
@@ -114,35 +106,6 @@ class RecyclerAdapterFP(private var feinespendents: ArrayList<Client>) : Recycle
                 alertDialog.show()
                 true
             }
-
-            fotoportada.setOnLongClickListener{
-
-                val builder = AlertDialog.Builder(context)
-                builder.setTitle("Cambiar foto de perfil")
-                builder.setMessage("Vols cambiar foto?")
-                builder.setIcon(android.R.drawable.ic_menu_gallery)
-                builder.setPositiveButton("Si") { _, _ ->
-
-                    val posicioFoto = feinespendents //
-                    escollirFotoPerfil(posicioFoto.clientid, context)
-                }
-                builder.setNegativeButton("Anular") { _, _ ->
-                    return@setNegativeButton
-                }
-                val alertDialog: AlertDialog = builder.create()
-                alertDialog.setCancelable(false)
-                alertDialog.show()
-                true
-            }
-        }
-
-        private fun escollirFotoPerfil(position: String,context: Context) {
-
-             // val intentFotoGal = Intent(context, EscollirFotoGaleria::class.java)
-                val intentFotoGal = Intent(itemView.context, EscollirFotoGaleria::class.java)
-                intentFotoGal.putExtra("fotoposicio", position)
-                (context as Feines).startActivityForResult(intentFotoGal, REQUEST_CODE)
-
         }
 
         private fun borrarClient(client_id: String) {

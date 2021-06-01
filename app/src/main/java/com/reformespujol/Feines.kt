@@ -1,9 +1,7 @@
 package com.reformespujol
 
 import Client
-import Imatge
 import RecyclerAdapterFP
-import android.R.attr
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -24,7 +22,6 @@ val mAdapter : RecyclerAdapterFP = RecyclerAdapterFP(feinespendents)
 
 class Feines : AppCompatActivity() {
 
-    private val REQUEST_CODE = 0
     private var mMessageReference: DatabaseReference? = null
     lateinit var context: Context
     private var svClients: SearchView? = null
@@ -74,18 +71,4 @@ class Feines : AppCompatActivity() {
         mMessageReference!!.addValueEventListener(messageListener)
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        val fotoportada : ImageView = findViewById(R.id.fotoportada)
-
-        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
-
-            val rebreImatge = data!!.getStringExtra("fototornada")
-           // Picasso.with(this).cancelRequest(fotoportada);
-            Picasso.with(this).load(rebreImatge).into(fotoportada)
-            mAdapter.notifyDataSetChanged()
-
-        }
-    }
 }

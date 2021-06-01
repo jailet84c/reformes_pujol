@@ -24,11 +24,9 @@ import com.squareup.picasso.Picasso
 import java.util.*
 import kotlin.collections.ArrayList
 
-
 val fotosClients: MutableList<Imatge> = ArrayList()
 lateinit var RecyclerDetall: RecyclerView
 val adapterDetall = ImagesAdapter()
-
 
 class ClientDetall : AppCompatActivity() {
 
@@ -37,9 +35,9 @@ class ClientDetall : AppCompatActivity() {
      var camping : TextView? = null
      var nom: TextView? = null
      var telefon: TextView? = null
-     var preu: TextView? = null
-     var parcial: TextView? = null
      var feina: TextView? = null
+     var parcial: TextView? = null
+     var preu: TextView? = null
 
      private var mDatabaseRef: DatabaseReference? = null
      private var mStorageRef : StorageReference? = null
@@ -58,23 +56,81 @@ class ClientDetall : AppCompatActivity() {
          camping = findViewById(R.id.tvdcamping)
          nom = findViewById(R.id.tvdnom)
          telefon = findViewById(R.id.tvtele)
-         preu = findViewById(R.id.tvdpreu)
          parcial = findViewById(R.id.tvdparcial)
          feina = findViewById(R.id.tvfeina)
+         preu = findViewById(R.id.tvdpreu)
 
-         rebreClient()
+         //Resultat client desde Activity Pressupostos
+         val recibir = intent
+         var datos = recibir.getStringExtra("clientDades")
+         if (datos == null) {
+             rebreClient() // Clicat desde RecyclerViewFP
+         } else {
+             rebreClientPressupost(datos) //Rebut desde l Activity Pressupost
+         }
+
+        // rebreClient()
+
+         mDatabaseRef = FirebaseDatabase.getInstance().getReference("clients") //Posar despres de rebreclient() si no es duplica...
 
          floatingfoto.setOnClickListener { obrirGaleria() }
-
-         mDatabaseRef = FirebaseDatabase.getInstance().getReference("clients")
      }
-         override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+    private fun rebreClientPressupost(campingRebut: String?) { //prova
+
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("clients").child(campingRebut!!)
+        val clientDetallPressupost = object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val clientDetallInfoPressupost = snapshot.getValue(Client::class.java)
+                camping!!.text = clientDetallInfoPressupost?.camping
+                nom!!.text = clientDetallInfoPressupost?.nom
+                telefon!!.text = clientDetallInfoPressupost?.telefon
+                parcial!!.text = clientDetallInfoPressupost?.parcial
+                feina!!.text = clientDetallInfoPressupost?.tipofeina
+                preu!!.text = clientDetallInfoPressupost?.preutotal
+            }
+            override fun onCancelled(error: DatabaseError) {
+            }
+        }
+        mDatabaseRef!!.addValueEventListener(clientDetallPressupost)
+
+        val campingupress: String = campingRebut
+        val storagepres = getInstance()
+        mStorageRef = storagepres.reference.child("Fotos Clients").child(campingupress)
+        fotosClients.clear() // Evitar que es repeteixin les fotos
+
+        val listAllTask: Task<ListResult> = mStorageRef!!.listAll()                // Mostrar imatges Firebase Storage
+
+        listAllTask.addOnCompleteListener { result ->
+
+            val items: List<StorageReference> = result.result!!.items
+
+            items.forEachIndexed { _, item ->
+
+                item.downloadUrl.addOnSuccessListener {
+
+                    Log.d("item", "$it")
+
+                    fotosClients.add(Imatge(it.toString()))
+
+                }.addOnCompleteListener {
+
+                    adapterDetall.ImagesAdapter(fotosClients, this@ClientDetall) //nessesari
+                    RecyclerDetall.adapter = adapterDetall //nessesari
+                    adapterDetall.notifyDataSetChanged()
+
+                }
+            }
+        }                                                                          // Mostrar imatges Firebase Storage
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
              val inflater = menuInflater
              inflater.inflate(R.menu.menudetallclient, menu)
              return super.onCreateOptionsMenu(menu)
          }
          override fun onOptionsItemSelected(item: MenuItem): Boolean {
              when (item.itemId) {
+
                  R.id.actualitzarClient -> {
                      updateClient()
                      return true
@@ -90,27 +146,40 @@ class ClientDetall : AppCompatActivity() {
 
     private fun veurePressupost() {
 
+        val idPress = camping!!.text.toString()
+        val intentVeureFeina = Intent(this, Pressupostos::class.java).apply {
+            putExtra("PressupostDades", idPress)
+        }
+
+        startActivity(intentVeureFeina)
+
     }
 
     private fun rebreClient() {
 
-         val result: Bundle? = this.intent.extras
+        val resultDades: Bundle? = this.intent.extras
+        val idClientDetall: String? = resultDades?.getString("DADESCLIENT")
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("clients").child(idClientDetall!!)
+        val rebreClientDetall = object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
 
-         val resultatcamping: String? = result?.getString("CAMPING")
-         val resultatnom: String? = result?.getString("NOM")
-         val resultattelefon: String? = result?.getString("TELEFON")
-         val resultatpreu: String? = result?.getString("PREU")
-         val resultatparcial: String? = result?.getString("PARCIAL")
-         val resultatfeina: String? = result?.getString("FEINA")
+                val clientDetallInfo = snapshot.getValue(Client::class.java)
 
-         camping!!.text = resultatcamping
-         nom!!.text = resultatnom
-         telefon!!.text = resultattelefon
-         preu!!.text = resultatpreu
-         parcial!!.text = resultatparcial
-         feina!!.text = resultatfeina
+                camping!!.text = clientDetallInfo?.camping
+                nom!!.text = clientDetallInfo?.nom
+                telefon!!.text = clientDetallInfo?.telefon
+                parcial!!.text = clientDetallInfo?.parcial
+                feina!!.text = clientDetallInfo?.tipofeina
+                preu!!.text = clientDetallInfo?.preutotal
+            }
 
-         val campingup: String = camping?.text.toString()
+            override fun onCancelled(error: DatabaseError) {
+            }
+        }
+        mDatabaseRef!!.addValueEventListener(rebreClientDetall)
+
+        // val campingup: String = camping?.text.toString()
+         val campingup: String = idClientDetall
          val storage = getInstance()
          mStorageRef = storage.reference.child("Fotos Clients").child(campingup)
 
@@ -151,30 +220,37 @@ class ClientDetall : AppCompatActivity() {
 
     }
 
-    private fun updateClient(mAdapter: RecyclerAdapterFP = RecyclerAdapterFP(feinespendents)) {
+    private fun updateClient() {
+        val clientId = camping!!.text.toString()
+        val clientRenovat = Client(
+            clientId,
+            camping!!.text.toString(),
+            "",
+            nom!!.text.toString(),
+            telefon!!.text.toString(),
+            "",
+            "",
+            "",
+            preu!!.text.toString(),
+            parcial!!.text.toString(),
+            feina!!.text.toString())
 
-        val campingup: String = camping?.text.toString()
-        val nomup: String = nom?.text.toString()
-        val telefonup: String = telefon?.text.toString()
-        val preuup: String = preu?.text.toString()
-        val parcialup: String = parcial?.text.toString()
-        val feinaup: String = feina?.text.toString()
+        if (camping!!.text.toString().isEmpty()) {
+            Toast.makeText(this, "Posa algo a concepte camping!", Toast.LENGTH_SHORT).show()
+        } else {
 
-        val clave: String = campingup
-        val client = Client(clave, campingup, nomup, telefonup, preuup,parcialup, feinaup)
-        mDatabaseRef?.child(clave)?.setValue(client)
-        mAdapter.notifyDataSetChanged()
-        finish()
+            mDatabaseRef!!.child(clientId).setValue(clientRenovat)
+            mAdapter.notifyDataSetChanged()
+            finish()
 
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
-
             // if imatges multiples seleccionades
-
                 if (data?.clipData != null) {
 
                 val count = data.clipData!!.itemCount
@@ -246,8 +322,8 @@ class ClientDetall : AppCompatActivity() {
 
                 itemView.setOnClickListener {
 
-                   val intentDetall = Intent(itemView.context, ActivityDetall::class.java)
-                    intentDetall.putExtra("url", detall.imatgeGaleria)
+                    val intentDetall = Intent(itemView.context, ActivityDetall::class.java)
+                    intentDetall.putExtra("posicion", adapterPosition) //posicio click
                     itemView.context.startActivity(intentDetall)
                 }
 
@@ -257,22 +333,17 @@ class ClientDetall : AppCompatActivity() {
                     builder.setTitle("Eliminar foto")
                     builder.setIcon(android.R.drawable.ic_dialog_alert)
                     builder.setPositiveButton("Eliminar foto") { _, _ ->
-
                         val perItemPosition = detall
                         borrarFoto(perItemPosition.imatgeGaleria)
-
                     }
-
+                    
                     builder.setNegativeButton("Anular") { _, _ ->
                         return@setNegativeButton
                     }
-
                     val alertDialog: AlertDialog = builder.create()
                     alertDialog.setCancelable(false)
                     alertDialog.show()
-
                     true
-
                 }
 
                 fotodetall.loadUrl(detall.imatgeGaleria)

@@ -21,11 +21,11 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardviewdetall"
-        android:layout_width="0dp"
-        android:layout_height="150sp"
-        android:layout_marginStart="5sp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="3dp"
-        android:layout_marginEnd="5sp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="10dp"
         app:cardBackgroundColor="#6697FB"
         app:cardCornerRadius="20dp"
@@ -37,63 +37,14 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintVertical_bias="1.0">
 
-        <TextView
-            android:id="@+id/tveuros"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="330sp"
-            android:layout_marginTop="110sp"
-            android:shadowColor="#838383"
-            android:shadowDx="3"
-            android:shadowDy="3"
-            android:shadowRadius="3"
-            android:text="€"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="normal|bold" />
-
-        <EditText
-            android:id="@+id/tvfeina"
-            android:layout_width="120sp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="250sp"
-            android:layout_marginTop="60dp"
-            android:layout_marginEnd="20dp"
-            android:background="@android:color/transparent"
-            android:gravity="center"
-            android:shadowColor="#757575"
-            android:shadowDx="3"
-            android:shadowDy="3"
-            android:shadowRadius="3"
-            android:text="Feina"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/tvdpreu"
-            android:layout_width="80sp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="250sp"
-            android:layout_marginTop="110sp"
-            android:layout_marginEnd="20sp"
-            android:background="@android:color/transparent"
-            android:gravity="end"
-            android:shadowColor="#838383"
-            android:shadowDx="3"
-            android:shadowDy="3"
-            android:shadowRadius="3"
-            android:text="Preu"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
         <EditText
             android:id="@+id/tvdcamping"
-            android:layout_width="200sp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:background="@android:color/transparent"
+            android:hint="@string/camping"
             android:shadowColor="#838383"
             android:shadowDx="3"
             android:shadowDy="3"
@@ -106,11 +57,12 @@
 
         <EditText
             android:id="@+id/tvdnom"
-            android:layout_width="200sp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="50sp"
+            android:layout_marginTop="50dp"
             android:background="@android:color/transparent"
+            android:hint="@string/nom"
             android:shadowColor="#838383"
             android:shadowDx="3"
             android:shadowDy="3"
@@ -121,11 +73,12 @@
 
         <EditText
             android:id="@+id/tvtele"
-            android:layout_width="200sp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="80sp"
+            android:layout_marginTop="80dp"
             android:background="@android:color/transparent"
+            android:hint="@string/Telefon"
             android:shadowColor="#838383"
             android:shadowDx="3"
             android:shadowDy="3"
@@ -135,12 +88,31 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/tvdparcial"
-            android:layout_width="100sp"
+            android:id="@+id/tvfeina"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20sp"
-            android:layout_marginTop="110sp"
+            android:layout_gravity="end"
+            android:layout_marginTop="50sp"
+            android:layout_marginEnd="20sp"
             android:background="@android:color/transparent"
+            android:gravity="center"
+            android:hint="@string/feina"
+            android:shadowColor="#757575"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="3"
+            android:text="@string/feina"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/tvdparcial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="110dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/pis"
             android:shadowColor="#838383"
             android:shadowDx="3"
             android:shadowDy="3"
@@ -149,11 +121,46 @@
             android:textColor="#000000"
             android:textSize="20sp" />
 
+        <EditText
+            android:id="@+id/tvdpreu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="30sp"
+            android:layout_marginBottom="20sp"
+            android:background="@android:color/transparent"
+            android:gravity="end"
+            android:hint="@string/preu"
+            android:shadowColor="#838383"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="3"
+            android:text="@string/preu"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tveuros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="15sp"
+            android:layout_marginBottom="20sp"
+            android:shadowColor="#838383"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="3"
+            android:text="@string/euros"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerDetall"
-        android:layout_width="400sp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="170dp"
