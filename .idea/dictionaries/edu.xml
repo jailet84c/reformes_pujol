@@ -2,10 +2,14 @@
   <dictionary name="edu">
     <words>
       <w>borrar</w>
+      <w>feina</w>
       <w>foto</w>
       <w>lista</w>
+      <w>parcial</w>
       <w>pressupost</w>
       <w>pressupostos</w>
+      <w>preu</w>
+      <w>telefon</w>
     </words>
   </dictionary>
 </component>

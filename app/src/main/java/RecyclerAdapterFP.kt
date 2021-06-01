@@ -18,7 +18,7 @@ class RecyclerAdapterFP(private var feinespendents: ArrayList<Client>) : Recycle
     var fpFilterList : ArrayList<Client> = feinespendents
     lateinit var context: Context
 
-    fun RecyclerAdapterFP(feinespendents: ArrayList<Client>, context: Context) {
+    fun recyclerAdapterFP(feinespendents: ArrayList<Client>, context: Context) {
         this.feinespendents = feinespendents
         this.context = context
     }
@@ -67,10 +67,10 @@ class RecyclerAdapterFP(private var feinespendents: ArrayList<Client>) : Recycle
 
         val camping = view.findViewById(R.id.tvcampinga) as TextView
         val nom = view.findViewById(R.id.tvnoma) as TextView
-        val telefon = view.findViewById(R.id.tvtelefon) as TextView
-        val preu = view.findViewById(R.id.tvpreu)  as TextView
-        val parcial = view.findViewById(R.id.tvpis)  as TextView
-        val feina = view.findViewById(R.id.tipofeina) as TextView
+        private val telefon = view.findViewById(R.id.tvtelefon) as TextView
+        private val preu = view.findViewById(R.id.tvpreu)  as TextView
+        private val parcial = view.findViewById(R.id.tvpis)  as TextView
+        private val feina = view.findViewById(R.id.tipofeina) as TextView
 
         fun bind(clientFP: Client, context: Context) {
 
@@ -95,8 +95,7 @@ class RecyclerAdapterFP(private var feinespendents: ArrayList<Client>) : Recycle
                 builder.setIcon(android.R.drawable.ic_dialog_alert)
                 builder.setPositiveButton("Eliminar client") { _, _ ->
 
-                    val perItemPosition = clientFP
-                    borrarClient(perItemPosition.clientid!!)
+                    borrarClient(clientFP.clientid!!)
                 }
                 builder.setNegativeButton("Anular") { _, _ ->
                     return@setNegativeButton

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/itemFP"
     android:layout_width="match_parent"
-    android:layout_height="200sp"
+    android:layout_height="150sp"
     android:padding="1dp">
 
     <androidx.cardview.widget.CardView
@@ -53,13 +52,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="70sp"
+            android:layout_marginTop="60sp"
             android:layout_marginEnd="20sp"
             android:shadowColor="#818181"
             android:shadowDx="3"
             android:shadowDy="3"
             android:shadowRadius="3"
-            android:text="Feina"
+            android:text="@string/feina"
             android:textAlignment="textEnd"
             android:textSize="14sp" />
 
@@ -69,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="40sp"
-            android:layout_marginBottom="20sp"
+            android:layout_marginBottom="10sp"
             android:gravity="end"
             android:shadowColor="#818181"
             android:shadowDx="3"
@@ -84,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="100dp"
             android:shadowColor="#818181"
             android:shadowDx="3"
             android:shadowDy="3"
@@ -97,9 +96,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_marginEnd="20sp"
-            android:layout_marginBottom="20sp"
-            android:text="€"
+            android:layout_marginEnd="25sp"
+            android:layout_marginBottom="10sp"
+            android:text="@string/euros"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -108,9 +107,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_marginEnd="20sp"
-            android:layout_marginBottom="45sp"
-            android:text="€"
+            android:layout_marginEnd="25sp"
+            android:layout_marginBottom="35sp"
+            android:text="@string/euros"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -120,7 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="40sp"
-            android:layout_marginBottom="45sp"
+            android:layout_marginBottom="35sp"
             android:shadowColor="#818181"
             android:shadowDx="3"
             android:shadowDy="3"
