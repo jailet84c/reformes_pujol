@@ -1,0 +1,11 @@
+data class ClientPendent (var clientid : String? = "",
+                    var camping : String? = "",
+                    var data : String? = "",
+                    var nom : String? = "",
+                    var telefon : String? = "",
+                    var concepte : String? = "",
+                    var n1 : String? = "",
+                    var preutiva : String? = "",
+                    var preutotal : String? = "",
+                    var parcial : String? = "",
+                    var tipofeina : String? = "")
