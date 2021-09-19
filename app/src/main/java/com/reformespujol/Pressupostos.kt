@@ -45,7 +45,7 @@ class Pressupostos : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         etcampingpre = findViewById(R.id.etCampingP)
-        etdatapre = findViewById(R.id.etData)
+        etdatapre = findViewById(R.id.etDataP)
         etnompre = findViewById(R.id.etNomP)
         ettlfpre = findViewById(R.id.ettlfpre)
         etconcepte = findViewById(R.id.etConceptepre)
@@ -55,14 +55,17 @@ class Pressupostos : AppCompatActivity() {
 
         //Resultat Pressupost desde Activity ClientDetall
         val recibirclient = intent
-        var datosClient = recibirclient.getStringExtra("PressupostDades")
-        if (datosClient == null) {
+        //Resultat Pressupost desde Activity Feines Pendents
+        val recibirclientFP = intent
+
+        val datosClient = recibirclient.getStringExtra("PressupostDades")
+        val datosClientFP = recibirclientFP.getStringExtra("dadesFP")
+
+        if (datosClient == null && datosClientFP == null) {
             rebrePressupost() // Clicat desde RecyclerViewFP
-        } else {
+        } else if (datosClientFP == null && datosClient != null) {
             rebrePressupostClient(datosClient) //Rebut desde l Activity ClientDetall
         }
-
-        //rebrePressupost()
 
         pressRef = FirebaseDatabase.getInstance().getReference("pressupostos")
 
@@ -108,7 +111,6 @@ class Pressupostos : AppCompatActivity() {
                 return true
             }
             R.id.veureFeina -> {
-
                 veureFeina()
                 return true
             }

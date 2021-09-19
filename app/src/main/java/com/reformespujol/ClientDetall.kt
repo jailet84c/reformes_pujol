@@ -2,7 +2,6 @@ package com.reformespujol
 
 import Client
 import Imatge
-import RecyclerAdapterFP
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -60,25 +59,27 @@ class ClientDetall : AppCompatActivity() {
          feina = findViewById(R.id.tvfeina)
          preu = findViewById(R.id.tvdpreu)
 
-         //Resultat client desde Activity Pressupostos
-         val recibir = intent
-         var datos = recibir.getStringExtra("clientDades")
-         if (datos == null) {
-             rebreClient() // Clicat desde RecyclerViewFP
-         } else {
-             rebreClientPressupost(datos) //Rebut desde l Activity Pressupost
-         }
+         val rebreDadesPressupost: Bundle? = this.intent.extras
+         val resultDades: Bundle? = this.intent.extras
 
-        // rebreClient()
+         val dadesPressupost : String? = rebreDadesPressupost?.getString("clientDades") // Activity Pressupostos
+         val idClientDetall: String? = resultDades?.getString("DADESCLIENT") // Activity RecyclerFP
+
+         if (idClientDetall == null && dadesPressupost != null) {
+             rebreClientPressupost(dadesPressupost)
+         } else if(dadesPressupost == null && idClientDetall != null) {
+             rebreClient(idClientDetall)
+         } else {
+             Toast.makeText(this,"No hi han dades",Toast.LENGTH_SHORT).show()
+         }
 
          mDatabaseRef = FirebaseDatabase.getInstance().getReference("clients") //Posar despres de rebreclient() si no es duplica...
 
          floatingfoto.setOnClickListener { obrirGaleria() }
      }
 
-    private fun rebreClientPressupost(campingRebut: String?) { //prova
-
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("clients").child(campingRebut!!)
+    private fun rebreClientPressupost(dadesPressupost : String?) {
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("clients").child(dadesPressupost!!)
         val clientDetallPressupost = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val clientDetallInfoPressupost = snapshot.getValue(Client::class.java)
@@ -94,17 +95,14 @@ class ClientDetall : AppCompatActivity() {
         }
         mDatabaseRef!!.addValueEventListener(clientDetallPressupost)
 
-        val campingupress: String = campingRebut
+        val campingupress: String = dadesPressupost
         val storagepres = getInstance()
         mStorageRef = storagepres.reference.child("Fotos Clients").child(campingupress)
         fotosClients.clear() // Evitar que es repeteixin les fotos
 
         val listAllTask: Task<ListResult> = mStorageRef!!.listAll()                // Mostrar imatges Firebase Storage
-
         listAllTask.addOnCompleteListener { result ->
-
             val items: List<StorageReference> = result.result!!.items
-
             items.forEachIndexed { _, item ->
 
                 item.downloadUrl.addOnSuccessListener {
@@ -150,15 +148,11 @@ class ClientDetall : AppCompatActivity() {
         val intentVeureFeina = Intent(this, Pressupostos::class.java).apply {
             putExtra("PressupostDades", idPress)
         }
-
-        startActivity(intentVeureFeina)
-
+            startActivity(intentVeureFeina)
     }
 
-    private fun rebreClient() {
 
-        val resultDades: Bundle? = this.intent.extras
-        val idClientDetall: String? = resultDades?.getString("DADESCLIENT")
+    private fun rebreClient(idClientDetall : String?) {
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("clients").child(idClientDetall!!)
         val rebreClientDetall = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -242,7 +236,6 @@ class ClientDetall : AppCompatActivity() {
             mDatabaseRef!!.child(clientId).setValue(clientRenovat)
             mAdapter.notifyDataSetChanged()
             finish()
-
         }
     }
 
@@ -363,11 +356,8 @@ class ClientDetall : AppCompatActivity() {
             private fun ImageView.loadUrl(url: String) {
 
                 if (url.isEmpty()) {
-
                     fotodetall.setImageResource(R.drawable.appicono_foreground)
-
                 } else {
-
                     Picasso.with(context).load(url).into(fotodetall)
                 }
             }

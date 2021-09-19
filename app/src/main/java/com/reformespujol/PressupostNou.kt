@@ -56,7 +56,7 @@ class PressupostNou : AppCompatActivity() {
             etdataprenou!!.text.toString().trim(),
             etnomprenou!!.text.toString().trim(),
             ettelefonnou!!.text.toString().trim(),
-            etconceptenou!!.text.toString(),
+            etconceptenou!!.text.toString().trim(),
             etnumeros!!.text.toString().trim(),
             ettotalivanou!!.text.toString().trim(),
             etpreutotalnou!!.text.toString().trim())

@@ -30,7 +30,7 @@
         android:shadowDx="3"
         android:shadowDy="3"
         android:shadowRadius="3"
-        android:text="Feines"
+        android:text="@string/feines"
         android:textColor="@color/white"
         android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"

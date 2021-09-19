@@ -48,5 +48,10 @@
     <string name="veurepressupost">veurePressupost</string>
     <string name="veurefeina">veureFeina</string>
     <string name="tlf">Tlf :</string>
+    <string name="feines_a_fer">Feines a fer</string>
+    <string name="feines">Feines</string>
+    <string name="feines_acabades">Feines acabades</string>
+    <string name="feina_a_fer">Feina a fer</string>
+    <string name="feina_feta">Feina feta</string>
 
 </resources>

@@ -132,7 +132,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etData"
+            android:id="@+id/etDataP"
             android:layout_width="80sp"
             android:layout_height="wrap_content"
             android:layout_gravity="start|top"

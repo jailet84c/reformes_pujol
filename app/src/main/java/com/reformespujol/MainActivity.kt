@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun obrirFeines() {
-        val intent = Intent(this, Feines::class.java)
+        val intent = Intent(this, EscollirTiposFeina::class.java)
         startActivity(intent)
     }
 }

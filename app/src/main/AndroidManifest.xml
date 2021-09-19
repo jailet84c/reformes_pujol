@@ -38,7 +38,8 @@
         <activity android:name=".Campings" />
         <activity android:name=".agregarNouClient" />
         <activity android:name=".ClientDetall" />
-        <activity android:name=".EscollirFotoGaleria" />
+        <activity android:name=".EscollirTiposFeina" />
+        <activity android:name=".FeinesPendents" />
         <activity android:name=".LListaPressupostos" />
         <activity
             android:name=".Pressupostos"
