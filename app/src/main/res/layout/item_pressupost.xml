@@ -1,91 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layoutitempressupost"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="100sp"
-    android:layout_margin="1sp"
-    android:adjustViewBounds="true"
-    android:background="@drawable/rectangle"
-    android:padding="1dp">
+    android:layout_height="96dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:id="@+id/layoutitempressupost"
+    card_view:cardBackgroundColor="#FFFF"
+    card_view:cardCornerRadius="8dp"
+    card_view:contentPadding="10dp"
+    android:foreground="?selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
 
-    <TextView
-        android:id="@+id/tvitemcamping"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:shadowColor="#818181"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="3"
-        android:text="Camping"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvitemnombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="40dp"
-        android:inputType="textMultiLine"
-        android:shadowColor="#888888"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="3"
-        android:text="Nom"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tvitemcamping"
+                android:layout_width="140dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="68dp"
+                android:text="Camping" />
 
-    <TextView
-        android:id="@+id/tvitempreu"
-        android:layout_width="80sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="40dp"
-        android:gravity="end"
-        android:shadowColor="#8A8A8A"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="3"
-        android:text="Preu"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tvitemnombre"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="end|center_vertical"
+                android:text="Nom" />
 
-    <TextView
-        android:id="@+id/tvitemeuros"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="€"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/tvitempreu"
-        app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvitemdata"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:shadowColor="#8A8A8A"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="3"
-        android:text="Data"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvitemcamping" />
+            <TextView
+                android:id="@+id/tvitemdata"
+                android:layout_width="140dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="top"
+                android:text="Data" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvitempreu"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="Preu"
+                android:gravity="end|center_vertical"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+
