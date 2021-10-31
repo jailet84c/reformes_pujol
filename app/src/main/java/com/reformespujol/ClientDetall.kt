@@ -106,9 +106,7 @@ class ClientDetall : AppCompatActivity() {
             items.forEachIndexed { _, item ->
 
                 item.downloadUrl.addOnSuccessListener {
-
                     Log.d("item", "$it")
-
                     fotosClients.add(Imatge(it.toString()))
 
                 }.addOnCompleteListener {
@@ -178,20 +176,13 @@ class ClientDetall : AppCompatActivity() {
          mStorageRef = storage.reference.child("Fotos Clients").child(campingup)
 
          fotosClients.clear() // Evitar que es repeteixin les fotos
-
-         val listAllTask: Task<ListResult> = mStorageRef!!.listAll()                // Mostrar imatges Firebase Storage
-
-         listAllTask.addOnCompleteListener { result ->
-
-             val items: List<StorageReference> = result.result!!.items
-
-             items.forEachIndexed { _, item ->
-
-                 item.downloadUrl.addOnSuccessListener {
-
-                     Log.d("item", "$it")
-
-                     fotosClients.add(Imatge(it.toString()))
+        val listAllTask: Task<ListResult> = mStorageRef!!.listAll()                // Mostrar imatges Firebase Storage
+        listAllTask.addOnCompleteListener { result ->
+            val items: List<StorageReference> = result.result!!.items
+            items.forEachIndexed { _, item ->
+                item.downloadUrl.addOnSuccessListener {
+                    Log.d("item", "$it")
+                    fotosClients.add(Imatge(it.toString()))
 
                  }.addOnCompleteListener {
 
@@ -264,7 +255,6 @@ class ClientDetall : AppCompatActivity() {
                 }
                 } else if (data?.data != null) {
                     // if imatge unica
-
                     val imageUri: Uri? = data.data
                     val filePath: StorageReference = mStorageRef!!.child(imageUri?.lastPathSegment!!) //posar nomes un .child si no es duplica per el mStorageRef
                     filePath.putFile(imageUri).addOnSuccessListener {

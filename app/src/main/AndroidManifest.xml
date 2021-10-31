@@ -39,6 +39,8 @@
         <activity android:name=".agregarNouClient" />
         <activity android:name=".ClientDetall" />
         <activity android:name=".EscollirTiposFeina" />
+        <activity android:name="escollirPressupostosC" />
+        <activity android:name="VisorPressupost" />
         <activity android:name=".FeinesPendents" />
         <activity android:name=".LListaPressupostos" />
         <activity

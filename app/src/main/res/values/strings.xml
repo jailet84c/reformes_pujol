@@ -53,5 +53,8 @@
     <string name="feines_acabades">Feines acabades</string>
     <string name="feina_a_fer">Feina a fer</string>
     <string name="feina_feta">Feina feta</string>
+    <string name="escriure_text_aqui">Escriure text aqui</string>
+    <string name="pressupostos_pendents">Pressupostos pendents...</string>
+    <string name="pressupostos">Pressupostos</string>
 
 </resources>

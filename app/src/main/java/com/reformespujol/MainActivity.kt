@@ -1,7 +1,6 @@
 package com.reformespujol
 
 import android.content.Intent
-import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -53,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun obrirPressupostos() {
-        val intent = Intent(this, LListaPressupostos::class.java)
+        val intent = Intent(this, escollirPressupostosC::class.java)
         startActivity(intent)
     }
 

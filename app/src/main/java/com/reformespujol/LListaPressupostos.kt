@@ -116,7 +116,7 @@ class PressupostAdapter(private var pressupostosList: ArrayList<Client>) : Recyc
 
                 if (positionpre != RecyclerView.NO_POSITION) {
 
-                    val intentpressupost = Intent(contextpre, Pressupostos::class.java).apply {
+                    val intentpressupost = Intent(contextpre, VisorPressupost::class.java).apply {
                         putExtra("ID", detallpre.camping)
                     }
 

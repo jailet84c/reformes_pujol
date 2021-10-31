@@ -3,13 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/editextrodo.xml" value="0.20416666666666666" />
         <entry key="app/src/main/res/layout/activity_client_detall.xml" value="0.21" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="app/src/main/res/layout/activity_material_pendent.xml" value="0.18802083333333333" />
+        <entry key="app/src/main/res/layout/activity_visorpressupost.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/escollirpressupostos.xml" value="0.2" />
         <entry key="app/src/main/res/layout/item_pressupost.xml" value="0.2" />
         <entry key="app/src/main/res/layout/llista_pressupostos_activity.xml" value="0.12203947368421053" />
+        <entry key="app/src/main/res/layout/pressupostos.xml" value="0.18802083333333333" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
